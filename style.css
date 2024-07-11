@@ -1,147 +1,117 @@
-.inner-eye{
-    height: 360px;
-    width: 360px;
-    position: absolute;
-    left: 21%;
-    background-color: rgb(0, 174, 255);
-    border: solid 20px #2b2b2b;
-    border-radius: 50%
+body{
+    background-color: silver;
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+button{
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+input{
+    font-size: 2rem;
+    font-family: 'Courier New', Courier, monospace;
 }
 .outer-eye{
     height: 450px;
     width: 700px;
     background-color: rgb(163, 0, 0);
-    border: solid 20px black;
+    border: solid 5px black;
     border-radius: 50%;
-    margin: auto;
+    box-shadow: 1rem 1rem 0.3rem grey;
 }
 .mid-eye{
     height: 400px;
-    width: 700px;
+    width: 690px;
     background-color: white;
-    border: none;
+    border: solid 1px;
     border-radius: 50%;
     position: relative;
-    top: 5%; 
+    margin-top: 3.5%;
+    margin-left: 0.5%;
+}
+.inner-eye{
+    height: 400px;
+    width: 400px;
+    position: relative;
+    left: 21%;
+    background-color: rgb(0, 119, 255);
+    border: solid 1px #2b2b2b4f;
+    border-radius: 50%;
 }
 .pupil{
-    height: 180px;
-    width: 180px;
+    height: 200px;
+    width: 200px;
     background-color: black;
-    border: solid 20px #2b2b2b;
+    border: solid 5px #2b2b2b;
     border-radius: 50%;
-    position: absolute;
-    left: 19%;
-    top: 19%;
+    position: relative;
+    left: 24%;
+    top: 24%;
 }
 .pupil>img{
     height: 180px;
     width: 180px;
+    box-shadow: none;
 }
-body {
-    background-color:darkorange;
+.text{
+  font-size: 6rem;
+  font-weight:bold;
+  font-family:'Courier New', Courier, monospace;
+  text-shadow: 1rem 1rem 0.3rem grey;
 }
-header{
-    text-align: center;
-    clear: both;
+#curves{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
 }
-footer{
-    text-align: center;
-    clear: both;
-}
-h1{
-    margin-bottom: 0;
-    font-size: 80px;
-}
-h2{
-    font-size: 40px;
-    text-align: center;
-    text-decoration: underline;
-}
-h3{
-    font-size: 30px;
-    text-align: center;
-}
-p{
-    font-size: 25px
-}
-.lore-img{
-    float: left;
-}
-.butterfly-two{
-    margin-left: 25%;
-}
-.venn-diagram{
-    border: solid 5px darkorange;
-    border-radius: 10%;
-}
-.history{
-    border: solid 5px darkorange;
-    border-radius: 5%;
-}
-li{
-    text-align: center;
-    list-style-position: inside;
-    list-style-type: square;
-    font-size: 25px;
-}
-.container{
+#gallery{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
 }
-.row{
-    flex-shrink: 1;
-    flex-grow: 1;
-    max-width: 850px;
-    background-color: orange;
-    text-align: left;
-    border: 5px solid rgb(189, 123, 0);
-    border-radius: 5%;
-    padding: 20px;
-}
-#gallery{
-    text-align: center;
+img{
+    border-radius: 10px;
+    box-shadow: 1rem 1rem 0.3rem gray;
 }
 @media (max-width: 800px) {
     .outer-eye{
         height: 225px;
         width: 350px;
-        border: solid 10px black;
+        border: solid 3px black;
     }
     .mid-eye{
         height: 200px;
-        width: 350px;
+        width: 345px;
     }
     .inner-eye{
-        height: 180px;
-        width: 180px;
-        border: solid 10px #2b2b2b;
+        height: 200px;
+        width: 200px;
     }
     .pupil{
-        height: 90px;
-        width: 90px;
-        border: solid 10px #2b2b2b;
+        height: 100px;
+        width: 100px;
+        border: solid 3px #2b2b2b;
     }
     .pupil>img{
         height: 90px;
         width: 90px;
     }
-    h1{
-        font-size: 50px;
+    .text{
+        font-size: 3rem;
     }
-    h2{
-        font-size: 30px;
+    label{
+        font-size: 1.5rem;
     }
-    h3{
-        font-size: 25px;
+    input{
+        font-size: 1.5rem;
     }
-    p{
-        font-size: 20px;
-    }
-    li{
-        font-size: 20px;
+    button{
+        font-size: 1.5rem;
     }
 }
