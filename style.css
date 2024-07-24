@@ -5,86 +5,86 @@ p{
     font-family:'Courier New', Courier, monospace;
     font-style: oblique;
 }
-.nav-bar-container{
+.main-title-container{
     background-color: rgb(246, 147, 26);
-    border:ridge 0.5vw orange;
-    border-radius: 5vw;
+    border:solid 0.5vw orange;
+    border-radius: 3vw;
     display: flex;
     flex-direction: row;
     height: fit-content;
-    margin: 2vw;
-    padding: 1vw;
-    gap: 1vw;
+    margin: 1vw;
+    padding: 0.5vw;
     align-items: center;
 }
-.nav-bar-title{
+.main-title{
     position: relative;
     width:fit-content;
     height: fit-content;
     font-family:'Courier New', Courier, monospace;
     font-style:oblique;
     font-weight: bold;
-    font-size: 4vw;
-    left: 9%;
+    font-size: 3vw;
+    left: 19%;
 }
-.Pali-Punks-PFP{
-    height: 6vw;
-    width: 6vw;
+.laser-eyes{
+    height: 4vw;
+    width: 4vw;
     box-shadow: none;
 }
-.GM-punk{
+.gif-1{
+    padding: 0vw;
     height: 100%;
     width:auto;
     float: right;
     box-shadow: none;
-    border-radius: 5vw;
+    border-radius: 3vw;
 }
-.grid{
-    display: grid;
-    grid-template-columns: 3.5fr 1fr;
-    grid-template-rows: 30vw;
-    margin: 2vw;
-    gap: 2vw;
-}
-.Item-1{
+.gif-text-1{
     padding: 1vw;
+    margin-left: 2vw;
+    font-size: 1.5vw;
+}
+.grid-1{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 20vw;
+    margin: 1vw;
+    gap: 1vw;
+}
+.grid-1-item-1{
     background-color: rgb(246, 147, 26);
-    border: ridge 0.5vw orange;
-    border-radius: 5vw;
+    border: solid 0.5vw orange;
+    border-radius: 3vw;
 }
-.GIF-descrip{
-    font-size: 2vw;
-}
-.Item-2{
+.grid-1-item-2{
     display: flexbox;
     flex-direction: column;
     align-items: center;
     padding: 1vw;
     background-color: rgb(246, 147, 26);
-    border: ridge 0.5vw orange;
-    border-radius: 5vw;
+    border: solid 0.5vw orange;
+    border-radius: 3vw;
 }
-#gallery{
-    display: flex;
-    flex-flow: row wrap;
+#punk-gallery-flex{
+    display: grid;
+    grid-template-columns: 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw;
+    grid-template-rows: 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw 8vw;
     justify-content: center;
-    gap: 0.5rem;
-    margin: 2vw;
+    margin: 1vw;
 }
 img{
-    border-radius: 10px;
-    width: 6vw;
+    width: 8vw;
 }
 .roadmap{
     font-family: 'Courier New', Courier, monospace;
     list-style:none;
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-align: center;
 }
 .roadmap-1{
     font-family: 'Courier New', Courier, monospace;
     list-style:none;
-    font-size: 2vw;
+    font-size: 1.5vw;
     font-weight: bold;
     text-align: center;
 }
@@ -97,64 +97,59 @@ img{
     width: 4vw;
     padding: 0.5vw;
 }
-.gallery-1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 2vw;
-    margin-top: 2vw;
-}
-.blok9{
-    height: 44vw;
-    width: 44vw;
-}
-.road-map{
-    height: 44vw;
-    width: 44vw;
-}
-.deserted{
-    width: 90vw;
-    margin-top: 2vw;
-}
-.gallery-2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2vw;
-}
-.gallery-title{
+.punk-gallery-title-container{
     background-color: rgb(246, 147, 26);
-    border:ridge 0.5vw orange;
-    border-radius: 5vw;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    height: 4vw;
-    padding: 1vw;
-    gap: 1vw;
-    margin: 2vw;
-}
-.art-drops{
-    font-size: 4vw;
-    font-weight: bold;
-}
-.punk-gallery{
-    background-color: rgb(246, 147, 26);
-    border:ridge 0.5vw orange;
+    border:solid 0.5vw orange;
     border-radius: 5vw;
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 4vw;
-    margin: 2vw;
+    height: 3vw;
+    margin: 1vw;
     padding: 1vw;
-    gap: 1vw;
-    text-align: center;
 }
 .punk-gallery-title{
-    font-size: 4vw;
+    font-size: 3vw;
     font-weight: bold;
     position: relative;
-    left: 30vw
+    left: 36vw
+}
+.blok9{
+    height: 42vw;
+    width: 42vw;
+    border: solid 0.5vw orange;
+}
+.road-map{
+    height: 42vw;
+    width: 42vw;
+    border: solid 0.5vw orange;
+}
+.deserted{
+    width: 86vw;
+    border: solid 0.5vw orange;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.art-drops-gallery-grid{
+    display: grid;
+    grid-template-columns: 44vw 44vw;
+    grid-template-rows: 44vw auto;
+    justify-content: center;
+}
+.art-drops-title-container{
+    background-color: rgb(246, 147, 26);
+    border:solid 0.5vw orange;
+    border-radius: 5vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 3vw;
+    margin: 1vw;
+    padding: 1vw;
+}
+.art-drops-title{
+    font-size: 3vw;
+    font-weight: bold;
+    position: relative;
+    left: 39vw
 }
