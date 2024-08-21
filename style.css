@@ -210,6 +210,7 @@ li{
     grid-column-end: 3;
     text-align: center;
 }
+
 .grid-3-item-4-img{
     width: 43vw;
     border: solid 0.5vw rgb(215, 121, 7);
@@ -445,4 +446,26 @@ button{
     background-color: #D77907;
     color: #000;
     box-shadow: 0 0 10px #D77907, 0 0 20px #D77907, 0 0 30px #D77907;
+}
+
+
+.grid-2 img {
+    object-fit: cover;
+    border: 2px solid #D77907;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-2 img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #D77907;
+}
+.grid-3 img {
+    object-fit: cover;
+    border: 2px solid #D77907;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.grid-3 img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #D77907;
 }
