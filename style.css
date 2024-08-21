@@ -187,12 +187,12 @@ li{
     justify-content: center;
 }
 .grid-3-item-1-img{
-    width: 43vw;
+    width: 43.5vw;
     border: solid 0.5vw rgb(215, 121, 7);
     border-radius: 0.5vw;
 }
 .grid-3-item-2-img{
-    width: 43vw;
+    width: 43.5vw;
     border: solid 0.5vw rgb(215, 121, 7);
     border-radius: 0.5vw;
 }
@@ -203,7 +203,7 @@ li{
 .grid-3-item-3-img{
     border: solid 0.5vw rgb(215, 121, 7);
     border-radius: 0.5vw;
-    width: 88vw;
+    width: 88.5vw;
 }
 .grid-3-item-4{
     grid-column-start: 1;
