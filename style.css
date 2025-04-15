@@ -56,8 +56,8 @@ li{
 }
 .grid-1{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: 19vw 19vw 19vw 19vw 19vw;
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: 19vw 19vw 19vw 19vw;
     margin: 1vw;
     gap: 1vw;
 }
@@ -107,7 +107,7 @@ li{
     width: auto;
 }
 .grid-1-item-7{
-    grid-column: 1 / 4;
+    grid-column: 1 / 2;
     text-align: center;
 }
 .grid-1-item-7-img{
@@ -120,24 +120,7 @@ li{
     border: solid 0.5vw rgb(215, 121, 7);
     border-radius: 2vw;
     grid-row-start: 4;
-    grid-column: 4 / 6;
-}
-.grid-1-item-9{
-    height: 18vw;
-    background-color: rgb(246, 147, 26);
-    border: solid 0.5vw rgb(215, 121, 7);
-    border-radius: 2vw;
-    grid-row-start: 5;
-    grid-column: 1 / 4;
-}
-.grid-1-item-10{
-    display: flex;
-    grid-column: 4 / 6;
-    justify-content: center;
-}
-.grid-1-item-10-img{
-    height: 19vw;
-    width: auto;
+    grid-column: 2 / 6;
 }
 .punk-gallery-title-container{
     background-color: rgb(246, 147, 26);
