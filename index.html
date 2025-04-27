@@ -15,7 +15,7 @@
                 <div class="mid-eye">
                     <div class="inner-eye">
                         <div class="pupil"> 
-                            <img loading="lazy" class="butterfly-one" src="./Images/Butterfly.png"/>
+                            <img class="butterfly-one" src="./Images/Butterfly.png"/>
                         </div>
                     </div>
                 </div>
@@ -26,26 +26,16 @@
             
         </nav>
         <div class="social-media">
-            <a href="https://x.com/PalindromePunks"><img loading="lazy" class="twitter" src="./Images/x-social-media-white-icon.png"></a>
-            <a href="https://discord.gg/mJjMEsbtG3"><img loading="lazy" class="discord" src="./Images/discord.png"></a>
+            <a href="https://x.com/PalindromePunks"><img class="twitter" src="./Images/x-social-media-white-icon.png"></a>
+            <a href="https://discord.gg/mJjMEsbtG3"><img class="discord" src="./Images/discord.png"></a>
         </div>
     </header>
     <main>
-        <section id="wl">
-            <div id="cypherPunkAlert" class="cypher-punk-alert" style="display: none;">
-                <span id="alertMessage"></span>
-            </div>
-            <div class="input-container">
-                <input type="text" id="wallet" placeholder="Enter your wallet address">
-                <button id="walletSubmit">Submit</button>
-            </div>
-            <script src="script.js"></script>
-        </section>
         <section id="gallery">
             <h2>Palindrome Punks Gallery</h2>
-            <a href="https://magiceden.io/ordinals/marketplace/palindrome-punks"><img loading="lazy" class="ME" src="./Images/ME.png"></a>
+            <a href="https://magiceden.io/ordinals/marketplace/palindrome-punks"><img class="ME" src="./Images/ME.png"></a>
             <p>06/2023 (Genesis)</p>
-            <p>Hand-drawn 1-of-1 pixel PFP art</p>
+            <p>Hand-drawn 1-of-1 pixel PFP art by Blok</p>
             <p>99 symmetrically pixelated punks inscribed exclusively on palindrome satoshis</p>
             <p>Representing the state of transactional equilibrium facilitated by Bitcoin</p>
             
@@ -151,18 +141,18 @@
                 <img loading="lazy" src="./Palindrome Punks/Egg Head.png" alt="Egg Head Punk"/>
             </div>
             <h2>Art-Drops Gallery</h2>
-            <a href="https://magiceden.io/ordinals/marketplace/art-drops"><img loading="lazy" class="ME" src="./Images/ME.png"></a>
+            <a href="https://magiceden.io/ordinals/marketplace/art-drops"><img class="ME" src="./Images/ME.png"></a>
             <p>08/2023</p>
             <p>Hand-drawn 1-of-1 freestyle pixel art</p>
             <p>Inscribed on various rare sats</p>
             <div class="gallery-flex">
-                <div class="item-1"><img loading="lazy" src="./Art-Drops/Blok 9 Miner.gif" alt="Blok 9 Miner"/></div>
-                <div class="item-2"><img loading="lazy" src="./Art-Drops/Roadmap.png" alt="Roadmap"/></div>
-                <div class="item-3"><img loading="lazy" class="deserted" src="./Art-Drops/Deserted.png" alt="Deserted"/></div>
-                <div class="item-4"><img loading="lazy" src="./Art-Drops/Fiat Fuel.gif" alt="Fiat Fuel"/></div>
+                <div class="item-1"><img src="./Art-Drops/Blok 9 Miner.gif" alt="Blok 9 Miner"/></div>
+                <div class="item-2"><img src="./Art-Drops/Roadmap.png" alt="Roadmap"/></div>
+                <div class="item-3"><img class="deserted" src="./Art-Drops/Deserted.png" alt="Deserted"/></div>
+                <div class="item-4"><img src="./Art-Drops/Fiat Fuel.gif" alt="Fiat Fuel"/></div>
             </div>
             <h2>Blok Boyz Gallery</h2>
-            <a href="https://magiceden.io/ordinals/marketplace/blok-boyz"><img loading="lazy" class="ME" src="./Images/ME.png"></a>
+            <a href="https://magiceden.io/ordinals/marketplace/blok-boyz"><img class="ME" src="./Images/ME.png"></a>
             <p>08/2024</p>
             <p>Hand-drawn recursive pixel PFP art</p>
             <p>1000 Boyz just chilling on Blok 78</p>
@@ -176,7 +166,7 @@
             </div>
         </div>
         <h2>Blok Space Gallery</h2>
-        <a href="https://magiceden.io/ordinals/marketplace/blok-space"><img loading="lazy" class="ME" src="./Images/ME.png"></a>
+        <a href="https://magiceden.io/ordinals/marketplace/blok-space"><img class="ME" src="./Images/ME.png"></a>
         <p>04/2025</p>
         <p>Hand-drawn recursive freestyle pixel art</p>
         <p>1000 Blok Space studios available for rent</p>
@@ -191,10 +181,45 @@
             </script>
         </div>
         </section>
+        <section id="wl">
+            <h2>Whitelist Checker</h2>
+            <div id="cypherPunkAlert" class="cypher-punk-alert" style="display: none;">
+                <span id="alertMessage"></span>
+            </div>
+            <div class="input-container">
+                <input type="text" id="wallet" placeholder="Enter Taproot Address">
+                <button id="walletSubmit">Submit</button>
+            </div>
+            <script src="script.js"></script>
+        </section>
     </main>
     <footer>
         <p>Palindrome Punks Est. 2023</p>
     </footer>
     <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const galleries = document.querySelectorAll('.gallery-grid');
+            galleries.forEach(function(gallery) {
+                const images = Array.from(gallery.querySelectorAll('img'));
+                let visibleCount = 20;
+                images.forEach((img, idx) => {
+                    if (idx >= visibleCount) img.style.display = 'none';
+                });
+                if (images.length > visibleCount) {
+                    const btn = document.createElement('button');
+                    btn.textContent = 'Load More';
+                    btn.className = 'load-more-button';
+                    gallery.parentNode.insertBefore(btn, gallery.nextSibling);
+                    btn.addEventListener('click', function() {
+                        const nextImages = images.slice(visibleCount, visibleCount + 20);
+                        nextImages.forEach(img => img.style.display = '');
+                        visibleCount += 20;
+                        if (visibleCount >= images.length) btn.style.display = 'none';
+                    });
+                }
+            });
+        });
+        </script>
 </body>
 </html>
