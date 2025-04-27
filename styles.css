@@ -116,14 +116,14 @@ footer p {
 
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
+    gap: 15px;
     justify-content: center;
 }
 
 .gallery-grid img {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
     border: 2px solid #D77907;
     transition: transform 0.3s, box-shadow 0.3s;

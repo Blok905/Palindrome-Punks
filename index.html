@@ -202,7 +202,7 @@
             const galleries = document.querySelectorAll('.gallery-grid');
             galleries.forEach(function(gallery) {
                 const images = Array.from(gallery.querySelectorAll('img'));
-                let visibleCount = 20;
+                let visibleCount = 32;
                 images.forEach((img, idx) => {
                     if (idx >= visibleCount) img.style.display = 'none';
                 });
