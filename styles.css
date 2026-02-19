@@ -130,12 +130,95 @@ footer p {
     height: 150px;
     object-fit: cover;
     border: 2px solid #D77907;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: box-shadow 0.3s;
 }
 
-.gallery-grid img:hover {
+.gallery-item {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
     transform: scale(1.1);
+}
+
+.gallery-item:hover img {
     box-shadow: 0 0 15px #D77907;
+}
+
+.download-button {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    color: #0d0d0d;
+    border: 1px solid #D77907;
+    background: rgba(215, 121, 7, 0.95);
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 2;
+}
+
+.download-button svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+    display: block;
+    margin: auto;
+}
+
+.gallery-item:hover .download-button,
+.gallery-item:focus-within .download-button {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 4px 6px;
+    font-size: 0.65em;
+    line-height: 1.2;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.72);
+    border-top: 1px solid rgba(215, 121, 7, 0.9);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.gallery-item:hover .image-title,
+.gallery-item:focus-within .image-title {
+    opacity: 1;
+    visibility: visible;
+}
+
+.download-button:hover {
+    background: rgba(247, 147, 26, 1);
+    box-shadow: 0 0 10px rgba(247, 147, 26, 0.9);
+}
+
+.download-button:focus-visible {
+    opacity: 1;
+    visibility: visible;
+    outline: 2px solid #ffffff;
+    outline-offset: 2px;
+    background: rgba(247, 147, 26, 1);
+    box-shadow: 0 0 10px rgba(247, 147, 26, 0.9);
 }
 
 .gallery-flex {
@@ -158,6 +241,7 @@ footer p {
     height: 400px;
     object-fit: cover;
     border: 2px solid #D77907;
+    display: block;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 

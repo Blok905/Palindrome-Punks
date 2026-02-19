@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }, delay);
   }
     // Gallery-grid search: inject an <input> before each grid, then
-    // hide/show images whose src doesn’t match the query.
+    // hide/show images whose src doesn't match the query.
 document.querySelectorAll('.gallery-grid').forEach(grid => {
         const input = document.createElement('input');
         input.type = 'text';
@@ -72,3 +72,5 @@ function showAlert(message) {
 
     typeWriter();
 }
+
+

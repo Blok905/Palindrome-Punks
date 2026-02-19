@@ -40,7 +40,7 @@
                 <img loading="lazy" src="./Palindrome Punks/Cypherpunk.png" alt="Cypherpunk"/>
                 <img loading="lazy" src="./Palindrome Punks/Naija.png" alt="Naija Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Incognito.png" alt="Incognito Punk"/>
-                <img loading="lazy" src="./Palindrome Punks/Street.png" alt="Street Punk"/>
+                <img loading="lazy" src="./Palindrome Punks/Street.png" alt="Gangster Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Snake Charmer.png" alt="Snake Charmer Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Shroom.png" alt="Shroom Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Clown.png" alt="Clown Punk"/>
@@ -49,21 +49,21 @@
                 <img loading="lazy" src="./Palindrome Punks/Primitive.png" alt="Primitive Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Army.png" alt="Army Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Silly.png" alt="Silly Punk"/>
-                <img loading="lazy" src="./Palindrome Punks/Paranoid.png" alt="Paranoid Punk"/>
+                <img loading="lazy" src="./Palindrome Punks/Paranoid.png" alt="COVID Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Unholy Punk.png" alt="Unholy Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Saudi.png" alt="Saudi Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Monkey.png" alt="Monkey Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Lumberjack.png" alt="Lumberjack Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Holy.png" alt="Holy Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Stonks.png" alt="Stonks Punk"/>
-                <img loading="lazy" src="./Palindrome Punks/Magic.png" alt="Magic Punk"/>
+                <img loading="lazy" src="./Palindrome Punks/Magic.png" alt="Magical Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Whistling.png" alt="Whistling Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Pistol.png" alt="Pistol Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Vampire.png" alt="Vampire Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Viking.png" alt="Viking Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Frankenstein.png" alt="Frankenstein Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Batman.png" alt="Batman Punk"/>
-                <img loading="lazy" src="./Palindrome Punks/Dead.png" alt="Dead Punk"/>
+                <img loading="lazy" src="./Palindrome Punks/Dead.png" alt="Skeleton Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Anonymous.png" alt="Anonymous Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Bender.png" alt="Bender Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Dino Onesie.png" alt="Dino Onesie Punk"/>
@@ -96,7 +96,7 @@
                 <img loading="lazy" src="./Palindrome Punks/Jester.png" alt="Jester Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Monk.png" alt="Monk Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Prison.png" alt="Prison Punk"/>
-                <img loading="lazy" src="./Palindrome Punks/Music.png" alt="Music Punk"/>
+                <img loading="lazy" src="./Palindrome Punks/Music.png" alt="Musical Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Mr. Burns.png" alt="Mr. Burns Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Praying Mantis.png" alt="Praying Mantis Punk"/>
                 <img loading="lazy" src="./Palindrome Punks/Zorro.png" alt="Zorro Punk"/>
@@ -145,7 +145,7 @@
                 <!-- Generate 1000 images using a loop -->
                 <script>
                     for (let i = 1; i <= 1000; i++) {
-                        document.write('<img loading="lazy" class="blok-boyz" src="./Blok Boyz/' + i + '.png" alt="Image ' + i + '">');
+                        document.write('<img loading="lazy" class="blok-boyz" src="./Blok Boyz/' + i + '.png" alt="Blok Boyz #' + i + '">');
                     }
                 </script>
             </div>
@@ -161,7 +161,7 @@
             <!-- Generate 1000 images using a loop -->
             <script>
                 for (let i = 1; i <= 1000; i++) {
-                    document.write('<img loading="lazy" class="blok-boyz" src="./Blok Space/' + i + '.png" alt="Image ' + i + '">');
+                    document.write('<img loading="lazy" class="blok-boyz" src="./Blok Space/' + i + '.png" alt="Blok Space #' + i + '">');
                 }
             </script>
         </div>
@@ -211,12 +211,88 @@
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            const upscaleFactor = 4;
+
+            function getDownloadName(img) {
+                const sourceName = (img.getAttribute('alt') || 'image')
+                    .split('/')
+                    .pop()
+                    .split('?')[0]
+                    .replace(/\.[^.]+$/, '');
+                return sourceName + '.jpg';
+            }
+
+            function getImageTitle(img) {
+                const altText = (img.getAttribute('alt') || '').trim();
+                if (altText) return altText;
+                return (img.getAttribute('alt') || 'Untitled')
+                    .split('/')
+                    .pop()
+                    .split('?')[0]
+                    .replace(/\.[^.]+$/, '');
+            }
+
+            function downloadUpscaledJpeg(img) {
+                const sourceWidth = img.naturalWidth || img.width;
+                const sourceHeight = img.naturalHeight || img.height;
+                if (!sourceWidth || !sourceHeight) return;
+
+                const canvas = document.createElement('canvas');
+                canvas.width = sourceWidth * upscaleFactor;
+                canvas.height = sourceHeight * upscaleFactor;
+
+                const ctx = canvas.getContext('2d');
+                ctx.imageSmoothingEnabled = false;
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                canvas.toBlob(function(blob) {
+                    if (!blob) return;
+                    const link = document.createElement('a');
+                    link.href = URL.createObjectURL(blob);
+                    link.download = getDownloadName(img);
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                    setTimeout(function() {
+                        URL.revokeObjectURL(link.href);
+                    }, 0);
+                }, 'image/jpeg', 0.95);
+            }
+
             const galleries = document.querySelectorAll('.gallery-grid');
             galleries.forEach(function(gallery) {
                 const images = Array.from(gallery.querySelectorAll('img'));
+
+                images.forEach(function(img) {
+                    if (img.parentElement && img.parentElement.classList.contains('gallery-item')) return;
+
+                    const wrapper = document.createElement('div');
+                    wrapper.className = 'gallery-item';
+                    img.parentNode.insertBefore(wrapper, img);
+                    wrapper.appendChild(img);
+
+                    const titleFooter = document.createElement('div');
+                    titleFooter.className = 'image-title';
+                    titleFooter.textContent = getImageTitle(img);
+                    wrapper.appendChild(titleFooter);
+
+                    const downloadButton = document.createElement('button');
+                    downloadButton.type = 'button';
+                    downloadButton.className = 'download-button';
+                    downloadButton.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3v10.17l3.59-3.58L17 11l-5 5-5-5 1.41-1.41L11 13.17V3h1zm-7 14h14v2H5v-2z"></path></svg>';
+                    downloadButton.setAttribute('aria-label', 'Download upscaled JPEG');
+                    downloadButton.addEventListener('click', function(event) {
+                        event.stopPropagation();
+                        downloadUpscaledJpeg(img);
+                    });
+                    wrapper.appendChild(downloadButton);
+                });
+
                 let visibleCount = 60;
                 images.forEach((img, idx) => {
-                    if (idx >= visibleCount) img.style.display = 'none';
+                    if (idx >= visibleCount && img.parentElement) {
+                        img.parentElement.style.display = 'none';
+                    }
                 });
                 if (images.length > visibleCount) {
                     const btn = document.createElement('button');
@@ -225,7 +301,9 @@
                     gallery.parentNode.insertBefore(btn, gallery.nextSibling);
                     btn.addEventListener('click', function() {
                         const nextImages = images.slice(visibleCount, visibleCount + 20);
-                        nextImages.forEach(img => img.style.display = '');
+                        nextImages.forEach(function(img) {
+                            if (img.parentElement) img.parentElement.style.display = '';
+                        });
                         visibleCount += 20;
                         if (visibleCount >= images.length) btn.style.display = 'none';
                     });
