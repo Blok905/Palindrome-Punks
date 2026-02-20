@@ -526,7 +526,7 @@ button{
   .gallery-search:focus {
     box-shadow: 0 0 10px #D77907;
   }
-  iframe {
+iframe {
       width: 95%;
       height: 90vh;
       border: 4px solid #f7931a;
