@@ -216,7 +216,7 @@ footer p {
     grid-template-columns: repeat(auto-fill, minmax(150px, 150px));
     gap: 15px;
     justify-content: center;
-    border-bottom: 2px solid #D77907;
+    margin-bottom: 15px;
 }
 
 .gallery-search-results {
@@ -522,19 +522,6 @@ button{
     border-radius: 0.5em;
     background-color: #D77907;
 }
-.social-media{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1em;
-}
-.twitter{
-    width: 2em;
-}
-.discord{
-    width: 2.5em;
-}
 .ME{
     width: 3.5em;
     padding-bottom: 10px;
@@ -546,29 +533,6 @@ button{
     flex-direction: column;
     align-items: center;
 }
-
-.cypher-punk-alert {
-    position: relative;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(26,26,26,0.9), rgba(50,50,50,0.9));
-    border: 2px solid #D77907;
-    color: #D77907;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 16px;
-    text-align: center;
-    z-index: 1000;
-    box-shadow: 0 0 10px #D77907, 0 0 20px #D77907, 0 0 30px #D77907, 0 0 40px #D77907;
-    animation: neonGlow 1.5s infinite alternate;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    border-radius: 10px;
-    backdrop-filter: blur(10px);
-    opacity: 1;
-    transition: opacity 1s ease-out;
-    width: fit-content;
-    margin: auto;
-}
-
 .fade-out {
     opacity: 0;
 }
@@ -581,43 +545,6 @@ button{
         box-shadow: 0 0 20px #D77907, 0 0 30px #D77907, 0 0 40px #D77907, 0 0 50px #D77907;
     }
 }
-
-#wallet {
-    width: 305px;
-    padding: 10px;
-    font-size: 16px;
-    border: 2px solid #D77907;
-    background-color: #000;
-    color: #D77907;
-    border-radius: 5px;
-    text-align: center;
-    outline: none;
-    box-shadow: none;
-}
-#wallet:focus {
-    background-color: #000;
-    color: #D77907;
-    border: 2px solid #D77907;
-    box-shadow: 0 0 10px #D77907;
-}
-#walletSubmit {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: 2px solid #D77907;
-    background-color: #000;
-    color: #D77907;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    height: auto;
-}
-
-#walletSubmit:hover {
-    background-color: #D77907;
-    color: #000;
-    box-shadow: 0 0 10px #D77907, 0 0 20px #D77907, 0 0 30px #D77907;
-}
-
 .gallery-search {
     display: block;
     width: 80%;
@@ -650,7 +577,3 @@ iframe {
       align-items: center;
       height: 100vh;
     }
-
-
-
-
